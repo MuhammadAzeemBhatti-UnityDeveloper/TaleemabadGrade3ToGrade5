@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="shadowBackground">#34000000</color>
+    <color name="menuBarBackground">#202056</color>
+    <color name="menuBarBorder">#fff</color>
+    <color name="white">#FDFDFD</color>
+    <color name="cardview_light_background">#202056</color>
+    <color name="colorblankbackground">#4B000000</color>
+</resources>

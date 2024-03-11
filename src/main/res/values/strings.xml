@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Grade 3to5</string>
+  <string name="game_view_content_description">Game view</string>
+  <string name="facebook_app_id">353282638426217</string>
+  <string name="fb_login_protocol_scheme">fb353282638426217</string>
+  <string name="channel_description">General daily Notification</string>
+  <string name="channel_name">General Notifications</string>
+  <string name="problem_dialog_title">Having issues with the video?</string>
+  <string name="problem_dialog_problem1">Video is not playing</string>
+  <string name="problem_dialog_problem2">Loading time is too much</string>
+  <string name="problem_dialog_problem3">Video buffers a lot</string>
+</resources>

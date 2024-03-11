@@ -1,0 +1,870 @@
+package firebase.classes;
+
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.util.Log;
+
+//import com.google.firebase.database.DataSnapshot;
+//import com.google.firebase.database.DatabaseError;
+//import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.FirebaseDatabase;
+//import com.google.firebase.database.ValueEventListener;
+import com.orenda.taimo.grade3tograde5.SignupActivity;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import firebase.analytics.AppTimeAnalytics;
+
+public class GamesData {
+    public String startTime, completionTime, GameName, Status;
+    public int stars;
+    private Context context;
+
+    public GamesData(String startTime, String completionTime, String gameName, String status, int stars,Context context) {
+        this.startTime = startTime;
+        this.completionTime = completionTime;
+        GameName = gameName;
+        Status = status;
+        this.stars = stars;
+        this.context=context;
+    }
+    public void setGameData(){
+        String Alphabet=getAlphabet(GameName);
+        String Subject=getSubject(GameName);
+        String GameType=getGameType(GameName);
+        //FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        //FirebaseUser currentUser = mAuth.getCurrentUser();
+        //final String userUid = currentUser.getUid();
+        final String userUid = SignupActivity.userUid;
+        //final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Users/"+ userUid +"/Nursery/"+Subject+"/"+GameType+"/"+Alphabet);
+        vocabularyGames vocabularyGames=new vocabularyGames(this.startTime,this.completionTime,this.GameName,GameType,this.Status,this.stars);
+     //   mDatabase.push().setValue(vocabularyGames);
+        setRecentActivity(userUid);
+        setGameTimeAnalytics(this.GameName,this.startTime,this.completionTime);
+    }
+
+    private void setGameTimeAnalytics(String gameName,String startTime,String completionTime) {
+
+        Date convertStartTime=null;Date convertFinishTime=null;
+
+        SimpleDateFormat simpleDateFormat= new SimpleDateFormat("MM/dd/yyyy kk:mm:ss");
+        try {
+             convertStartTime=simpleDateFormat.parse(startTime);
+             convertFinishTime=simpleDateFormat.parse(completionTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        long diff=convertFinishTime.getTime()-convertStartTime.getTime();
+        long gameTimeInSeconds=(diff/1000);
+
+        AppTimeAnalytics appTimeAnalytics=new AppTimeAnalytics(gameTimeInSeconds,gameName,this.context);
+        appTimeAnalytics.setGameTimeAnalytics();
+    }
+
+    public void setRecentActivity(String useruid){
+        long time=new Date().getTime();
+        Log.d("currentTime",""+time);
+       // final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Users/"+useruid+"/Activity");
+        RecentActivity recentActivity=new RecentActivity(this.GameName,this.stars,time);
+     //   mDatabase.push().setValue(recentActivity);
+        updateStars(useruid);
+    }
+
+    private void updateStars(String useruid){
+        SharedPreferences preferences= PreferenceManager.getDefaultSharedPreferences(this.context);
+        int offlinestars = preferences.getInt("offlineTotalStars", 0);
+        final int currentStars=offlinestars+this.stars;
+        final SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt("offlineTotalStars", currentStars);
+        editor.apply();
+//        final DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference("Users/" + useruid + "/userStars");
+//        final ValueEventListener valueEventListener = new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//                if(dataSnapshot.exists()){
+//                    long stars=(long) dataSnapshot.getValue();
+//                    mDatabase.setValue(currentStars+stars);
+//                    editor.putInt("offlineTotalStars", 0);
+//                    editor.apply();
+//                }
+//                else{
+//                    mDatabase.setValue(currentStars);
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {
+//
+//            }
+//        };
+//        mDatabase.addListenerForSingleValueEvent(valueEventListener);
+    }
+
+    public String getAlphabet(String gameName){
+        switch (gameName){
+            case "PrimaryEnglishAI":
+            case "PrimaryEnglishAV":
+            case "PrimaryEnglishAW":
+                return "a";
+            case "PrimaryEnglishBI":
+            case "PrimaryEnglishBV":
+            case "PrimaryEnglishBW":
+                return "b";
+            case "PrimaryEnglishCI":
+            case "PrimaryEnglishCV":
+            case "PrimaryEnglishCW":
+                return "c";
+            case "PrimaryEnglishDI":
+            case "PrimaryEnglishDV":
+            case "PrimaryEnglishDW":
+                return "d";
+            case "PrimaryEnglishEI":
+            case "PrimaryEnglishEV":
+            case "PrimaryEnglishEW":
+                return "e";
+            case "PrimaryEnglishFI":
+            case "PrimaryEnglishFV":
+            case "PrimaryEnglishFW":
+                return "f";
+            case "PrimaryEnglishGI":
+            case "PrimaryEnglishGV":
+            case "PrimaryEnglishGW":
+                return "g";
+            case "PrimaryEnglishHI":
+            case "PrimaryEnglishHV":
+            case "PrimaryEnglishHW":
+                return "h";
+            case "PrimaryEnglishII":
+            case "PrimaryEnglishIV":
+            case "PrimaryEnglishIW":
+                return "i";
+            case "PrimaryEnglishJI":
+            case "PrimaryEnglishJV":
+            case "PrimaryEnglishJW":
+                return "j";
+            case "PrimaryEnglishKI":
+            case "PrimaryEnglishKV":
+            case "PrimaryEnglishKW":
+                return "k";
+            case "PrimaryEnglishLI":
+            case "PrimaryEnglishLV":
+            case "PrimaryEnglishLW":
+                return "l";
+            case "PrimaryEnglishMI":
+            case "PrimaryEnglishMV":
+            case "PrimaryEnglishMW":
+                return "m";
+            case "PrimaryEnglishNI":
+            case "PrimaryEnglishNV":
+            case "PrimaryEnglishNW":
+                return "n";
+            case "PrimaryEnglishOI":
+            case "PrimaryEnglishOV":
+            case "PrimaryEnglishOW":
+                return "o";
+            case "PrimaryEnglishPI":
+            case "PrimaryEnglishPV":
+            case "PrimaryEnglishPW":
+                return "p";
+            case "PrimaryEnglishQI":
+            case "PrimaryEnglishQV":
+            case "PrimaryEnglishQW":
+                return "q";
+            case "PrimaryEnglishRI":
+            case "PrimaryEnglishRV":
+            case "PrimaryEnglishRW":
+                return "r";
+            case "PrimaryEnglishSI":
+            case "PrimaryEnglishSV":
+            case "PrimaryEnglishSW":
+                return "s";
+            case "PrimaryEnglishTI":
+            case "PrimaryEnglishTV":
+            case "PrimaryEnglishTW":
+                return "t";
+            case "PrimaryEnglishUI":
+            case "PrimaryEnglishUV":
+            case "PrimaryEnglishUW":
+                return "u";
+            case "PrimaryEnglishVI":
+            case "PrimaryEnglishVV":
+            case "PrimaryEnglishVW":
+                return "v";
+            case "PrimaryEnglishWI":
+            case "PrimaryEnglishWV":
+            case "PrimaryEnglishWW":
+                return "w";
+            case "PrimaryEnglishXI":
+            case "PrimaryEnglishXV":
+            case "PrimaryEnglishXW":
+                return "x";
+            case "PrimaryEnglishYI":
+            case "PrimaryEnglishYV":
+            case "PrimaryEnglishYW":
+                return "y";
+            case "PrimaryEnglishZI":
+            case "PrimaryEnglishZV":
+            case "PrimaryEnglishZW":
+                return "z";
+            case "PrimaryUrduImlaAsaan":
+            case "PrimaryUrduImlaMushkil":
+            case "PrimaryUrduImlaTezTalwaar":
+                return "imla";
+            case "PrimaryUrduALifMadAaI":
+            case "PrimaryUrduALifMadAaV":
+            case "PrimaryUrduALifMadAaW":
+                return "alifmadaa";
+            case "PrimaryUrduALifI":
+            case "PrimaryUrduALifV":
+            case "PrimaryUrduALifW":
+                return "alif";
+            case "PrimaryUrduArrayI":
+            case "PrimaryUrduArrayV":
+            case "PrimaryUrduArrayW":
+                return "array";
+            case "PrimaryUrduBayI":
+            case "PrimaryUrduBayV":
+            case "PrimaryUrduBayW":
+                return "bay";
+            case "PrimaryUrduChayI":
+            case "PrimaryUrduChayV":
+            case "PrimaryUrduChayW":
+                return "chay";
+            case "PrimaryUrduDaalI":
+            case "PrimaryUrduDaalV":
+            case "PrimaryUrduDaalW":
+                return "daal";
+            case "PrimaryUrduDhaalI":
+            case "PrimaryUrduDhaalV":
+            case "PrimaryUrduDhaalW":
+                return "dhaal";
+            case "PrimaryUrduHayI":
+            case "PrimaryUrduHayV":
+            case "PrimaryUrduHayW":
+                return "hay";
+            case "PrimaryUrduJeemI":
+            case "PrimaryUrduJeemV":
+            case "PrimaryUrduJeemW":
+                return "jeem";
+            case "PrimaryUrduKhayI":
+            case "PrimaryUrduKhayV":
+            case "PrimaryUrduKhayW":
+                return "khay";
+            case "PrimaryUrduPayI":
+            case "PrimaryUrduPayV":
+            case "PrimaryUrduPayW":
+                return "pay";
+            case "PrimaryUrduRaayI":
+            case "PrimaryUrduRaayV":
+            case "PrimaryUrduRaayW":
+                return "ray";
+            case "PrimaryUrduSayI":
+            case "PrimaryUrduSayV":
+            case "PrimaryUrduSayW":
+                return "say";
+            case "PrimaryUrduTayI":
+            case "PrimaryUrduTayV":
+            case "PrimaryUrduTayW":
+                return "tay";
+            case "PrimaryUrduThayI":
+            case "PrimaryUrduThayV":
+            case "PrimaryUrduThayW":
+                return "thay";
+            case "PrimaryUrduZaalI":
+            case "PrimaryUrduZaalV":
+            case "PrimaryUrduZaalW":
+                return "zaal";
+            case "PrimaryUrduZayI":
+            case "PrimaryUrduZayV":
+            case "PrimaryUrduZayW":
+                return "zay";
+            case "PrimaryUrduZhayI":
+            case "PrimaryUrduZhayV":
+            case "PrimaryUrduZhayW":
+                return "zhay";
+            case "PrimaryUrduSeenI":
+            case "PrimaryUrduSeenV":
+            case "PrimaryUrduSeenW":
+                return "seen";
+            case "PrimaryUrduSheenI":
+            case "PrimaryUrduSheenV":
+            case "PrimaryUrduSheenW":
+                return "sheen";
+            case "PrimaryUrduSuaadI":
+            case "PrimaryUrduSuaadV":
+            case "PrimaryUrduSuaadW":
+                return "suaad";
+            case "PrimaryUrduZuaadI":
+            case "PrimaryUrduZuaadV":
+            case "PrimaryUrduZuaadW":
+                return "zuaad";
+            case "PrimaryUrduTuoyI":
+            case "PrimaryUrduTuoyV":
+            case "PrimaryUrduTuoyW":
+                return "tuoy";
+            case "PrimaryUrduZuoyI":
+            case "PrimaryUrduZuoyV":
+            case "PrimaryUrduZuoyW":
+                return "zuoy";
+            case "PrimaryUrduAeinI":
+            case "PrimaryUrduAeinV":
+            case "PrimaryUrduAeinW":
+                return "aein";
+            case "PrimaryUrduGhaeinI":
+            case "PrimaryUrduGhaeinV":
+            case "PrimaryUrduGhaeinW":
+                return "ghaein";
+            case "PrimaryUrduFayI":
+            case "PrimaryUrduFayV":
+            case "PrimaryUrduFayW":
+                return "fay";
+            case "PrimaryUrduQaafI":
+            case "PrimaryUrduQaafV":
+            case "PrimaryUrduQaafW":
+                return "qaaf";
+            case "PrimaryUrduKaafI":
+            case "PrimaryUrduKaafV":
+            case "PrimaryUrduKaafW":
+                return "kaaf";
+            case "PrimaryUrduGaafI":
+            case "PrimaryUrduGaafV":
+            case "PrimaryUrduGaafW":
+                return "gaaf";
+            case "PrimaryUrduLaamI":
+            case "PrimaryUrduLaamV":
+            case "PrimaryUrduLaamW":
+                return "laam";
+            case "PrimaryUrduMeemI":
+            case "PrimaryUrduMeemV":
+            case "PrimaryUrduMeemW":
+                return "meem";
+            case "PrimaryUrduNoonI":
+            case "PrimaryUrduNoonV":
+            case "PrimaryUrduNoonW":
+                return "noon";
+            case "PrimaryUrduWowI":
+            case "PrimaryUrduWowV":
+            case "PrimaryUrduWowW":
+                return "wow";
+            case "PrimaryUrduHayyI":
+            case "PrimaryUrduHayyV":
+            case "PrimaryUrdu2ChashmiHaiW":
+            case "PrimaryUrduGolHaiW":
+                return "hayy";
+            case "PrimaryUrduHamzaI":
+            case "PrimaryUrduHamzaV":
+            case "PrimaryUrduHamzaW":
+                return "hamza";
+            case "PrimaryUrduYaayI":
+            case "PrimaryUrduYaayV":
+            case "PrimaryUrduChotiYayW":
+            case "PrimaryUrduBarriYayW":
+                return "yaay";
+            case "PrimaryMath1I":
+            case "PrimaryMath1V":
+            case "PrimaryMath1W":
+                return "one";
+            case "PrimaryMath2I":
+            case "PrimaryMath2V":
+            case "PrimaryMath2W":
+                return "two";
+            case "PrimaryMath3I":
+            case "PrimaryMath3V":
+            case "PrimaryMath3W":
+                return "three";
+            case "PrimaryMath4I":
+            case "PrimaryMath4V":
+            case "PrimaryMath4W":
+                return "four";
+            case "PrimaryMath5I":
+            case "PrimaryMath5V":
+            case "PrimaryMath5W":
+                return "five";
+            case "PrimaryMath6I":
+            case "PrimaryMath6V":
+            case "PrimaryMath6W":
+                return "six";
+            case "PrimaryMath7I":
+            case "PrimaryMath7V":
+            case "PrimaryMath7W":
+                return "seven";
+            case "PrimaryMath8I":
+            case "PrimaryMath8V":
+            case "PrimaryMath8W":
+                return "eight";
+            case "PrimaryMath9I":
+            case "PrimaryMath9V":
+            case "PrimaryMath9W":
+                return "nine";
+        }
+        return "";
+    }
+
+    public String getSubject(String gameName) {
+        switch (gameName){
+            case "PrimaryEnglishAI":
+            case "PrimaryEnglishAV":
+            case "PrimaryEnglishAW":
+            case "PrimaryEnglishBI":
+            case "PrimaryEnglishBV":
+            case "PrimaryEnglishBW":
+            case "PrimaryEnglishCI":
+            case "PrimaryEnglishCV":
+            case "PrimaryEnglishCW":
+            case "PrimaryEnglishDI":
+            case "PrimaryEnglishDV":
+            case "PrimaryEnglishDW":
+            case "PrimaryEnglishEI":
+            case "PrimaryEnglishEV":
+            case "PrimaryEnglishEW":
+            case "PrimaryEnglishFI":
+            case "PrimaryEnglishFV":
+            case "PrimaryEnglishFW":
+            case "PrimaryEnglishGI":
+            case "PrimaryEnglishGV":
+            case "PrimaryEnglishGW":
+            case "PrimaryEnglishHI":
+            case "PrimaryEnglishHV":
+            case "PrimaryEnglishHW":
+            case "PrimaryEnglishII":
+            case "PrimaryEnglishIV":
+            case "PrimaryEnglishIW":
+            case "PrimaryEnglishJI":
+            case "PrimaryEnglishJV":
+            case "PrimaryEnglishJW":
+            case "PrimaryEnglishKI":
+            case "PrimaryEnglishKV":
+            case "PrimaryEnglishKW":
+            case "PrimaryEnglishLI":
+            case "PrimaryEnglishLV":
+            case "PrimaryEnglishLW":
+            case "PrimaryEnglishMI":
+            case "PrimaryEnglishMV":
+            case "PrimaryEnglishMW":
+            case "PrimaryEnglishNI":
+            case "PrimaryEnglishNV":
+            case "PrimaryEnglishNW":
+            case "PrimaryEnglishOI":
+            case "PrimaryEnglishOV":
+            case "PrimaryEnglishOW":
+            case "PrimaryEnglishPI":
+            case "PrimaryEnglishPV":
+            case "PrimaryEnglishPW":
+            case "PrimaryEnglishQI":
+            case "PrimaryEnglishQV":
+            case "PrimaryEnglishQW":
+            case "PrimaryEnglishRI":
+            case "PrimaryEnglishRV":
+            case "PrimaryEnglishRW":
+            case "PrimaryEnglishSI":
+            case "PrimaryEnglishSV":
+            case "PrimaryEnglishSW":
+            case "PrimaryEnglishTI":
+            case "PrimaryEnglishTV":
+            case "PrimaryEnglishTW":
+            case "PrimaryEnglishUI":
+            case "PrimaryEnglishUV":
+            case "PrimaryEnglishUW":
+            case "PrimaryEnglishVI":
+            case "PrimaryEnglishVV":
+            case "PrimaryEnglishVW":
+            case "PrimaryEnglishWI":
+            case "PrimaryEnglishWV":
+            case "PrimaryEnglishWW":
+            case "PrimaryEnglishXI":
+            case "PrimaryEnglishXV":
+            case "PrimaryEnglishXW":
+            case "PrimaryEnglishYI":
+            case "PrimaryEnglishYV":
+            case "PrimaryEnglishYW":
+            case "PrimaryEnglishZI":
+            case "PrimaryEnglishZV":
+            case "PrimaryEnglishZW":
+                return "English";
+            case "PrimaryUrduImlaAsaan":
+            case "PrimaryUrduImlaMushkil":
+            case "PrimaryUrduImlaTezTalwaar":
+            case "PrimaryUrduALifMadAaI":
+            case "PrimaryUrduALifMadAaV":
+            case "PrimaryUrduALifMadAaW":
+            case "PrimaryUrduALifI":
+            case "PrimaryUrduALifV":
+            case "PrimaryUrduALifW":
+            case "PrimaryUrduArrayI":
+            case "PrimaryUrduArrayV":
+            case "PrimaryUrduArrayW":
+            case "PrimaryUrduBayI":
+            case "PrimaryUrduBayV":
+            case "PrimaryUrduBayW":
+            case "PrimaryUrduChayI":
+            case "PrimaryUrduChayV":
+            case "PrimaryUrduChayW":
+            case "PrimaryUrduDaalI":
+            case "PrimaryUrduDaalV":
+            case "PrimaryUrduDaalW":
+            case "PrimaryUrduDhaalI":
+            case "PrimaryUrduDhaalV":
+            case "PrimaryUrduDhaalW":
+            case "PrimaryUrduHayI":
+            case "PrimaryUrduHayV":
+            case "PrimaryUrduHayW":
+            case "PrimaryUrduJeemI":
+            case "PrimaryUrduJeemV":
+            case "PrimaryUrduJeemW":
+            case "PrimaryUrduKhayI":
+            case "PrimaryUrduKhayV":
+            case "PrimaryUrduKhayW":
+            case "PrimaryUrduPayI":
+            case "PrimaryUrduPayV":
+            case "PrimaryUrduPayW":
+            case "PrimaryUrduRaayI":
+            case "PrimaryUrduRaayV":
+            case "PrimaryUrduRaayW":
+            case "PrimaryUrduSayI":
+            case "PrimaryUrduSayV":
+            case "PrimaryUrduSayW":
+            case "PrimaryUrduTayI":
+            case "PrimaryUrduTayV":
+            case "PrimaryUrduTayW":
+            case "PrimaryUrduThayI":
+            case "PrimaryUrduThayV":
+            case "PrimaryUrduThayW":
+            case "PrimaryUrduZaalI":
+            case "PrimaryUrduZaalV":
+            case "PrimaryUrduZaalW":
+            case "PrimaryUrduZayI":
+            case "PrimaryUrduZayV":
+            case "PrimaryUrduZayW":
+            case "PrimaryUrduZhayI":
+            case "PrimaryUrduZhayV":
+            case "PrimaryUrduZhayW":
+            case "PrimaryUrduSeenI":
+            case "PrimaryUrduSeenV":
+            case "PrimaryUrduSeenW":
+            case "PrimaryUrduSheenI":
+            case "PrimaryUrduSheenV":
+            case "PrimaryUrduSheenW":
+            case "PrimaryUrduSuaadI":
+            case "PrimaryUrduSuaadV":
+            case "PrimaryUrduSuaadW":
+            case "PrimaryUrduZuaadI":
+            case "PrimaryUrduZuaadV":
+            case "PrimaryUrduZuaadW":
+            case "PrimaryUrduTuoyI":
+            case "PrimaryUrduTuoyV":
+            case "PrimaryUrduTuoyW":
+            case "PrimaryUrduZuoyI":
+            case "PrimaryUrduZuoyV":
+            case "PrimaryUrduZuoyW":
+            case "PrimaryUrduAeinI":
+            case "PrimaryUrduAeinV":
+            case "PrimaryUrduAeinW":
+            case "PrimaryUrduGhaeinI":
+            case "PrimaryUrduGhaeinV":
+            case "PrimaryUrduGhaeinW":
+            case "PrimaryUrduFayI":
+            case "PrimaryUrduFayV":
+            case "PrimaryUrduFayW":
+            case "PrimaryUrduQaafI":
+            case "PrimaryUrduQaafV":
+            case "PrimaryUrduQaafW":
+            case "PrimaryUrduKaafI":
+            case "PrimaryUrduKaafV":
+            case "PrimaryUrduKaafW":
+            case "PrimaryUrduGaafI":
+            case "PrimaryUrduGaafV":
+            case "PrimaryUrduGaafW":
+            case "PrimaryUrduLaamI":
+            case "PrimaryUrduLaamV":
+            case "PrimaryUrduLaamW":
+            case "PrimaryUrduMeemI":
+            case "PrimaryUrduMeemV":
+            case "PrimaryUrduMeemW":
+            case "PrimaryUrduNoonI":
+            case "PrimaryUrduNoonV":
+            case "PrimaryUrduNoonW":
+            case "PrimaryUrduWowI":
+            case "PrimaryUrduWowV":
+            case "PrimaryUrduWowW":
+            case "PrimaryUrduHayyI":
+            case "PrimaryUrduHayyV":
+            case "PrimaryUrdu2ChashmiHaiW":
+            case "PrimaryUrduGolHaiW":
+            case "PrimaryUrduHamzaI":
+            case "PrimaryUrduHamzaV":
+            case "PrimaryUrduHamzaW":
+            case "PrimaryUrduYaayI":
+            case "PrimaryUrduYaayV":
+            case "PrimaryUrduChotiYayW":
+            case "PrimaryUrduBarriYayW":
+                return "Urdu";
+            case "PrimaryMath1I":
+            case "PrimaryMath1V":
+            case "PrimaryMath1W":
+            case "PrimaryMath2I":
+            case "PrimaryMath2V":
+            case "PrimaryMath2W":
+            case "PrimaryMath3I":
+            case "PrimaryMath3V":
+            case "PrimaryMath3W":
+            case "PrimaryMath4I":
+            case "PrimaryMath4V":
+            case "PrimaryMath4W":
+            case "PrimaryMath5I":
+            case "PrimaryMath5V":
+            case "PrimaryMath5W":
+            case "PrimaryMath6I":
+            case "PrimaryMath6V":
+            case "PrimaryMath6W":
+            case "PrimaryMath7I":
+            case "PrimaryMath7V":
+            case "PrimaryMath7W":
+            case "PrimaryMath8I":
+            case "PrimaryMath8V":
+            case "PrimaryMath8W":
+            case "PrimaryMath9I":
+            case "PrimaryMath9V":
+            case "PrimaryMath9W":
+                return "Maths";
+        }
+        return "";
+    }
+
+    public String getGameType(String gameName){
+        switch (gameName){
+            case "PrimaryEnglishAW":
+            case "PrimaryEnglishBW":
+            case "PrimaryEnglishCW":
+            case "PrimaryEnglishDW":
+            case "PrimaryEnglishEW":
+            case "PrimaryEnglishFW":
+            case "PrimaryEnglishGW":
+            case "PrimaryEnglishHW":
+            case "PrimaryEnglishIW":
+            case "PrimaryEnglishJW":
+            case "PrimaryEnglishKW":
+            case "PrimaryEnglishLW":
+            case "PrimaryEnglishMW":
+            case "PrimaryEnglishNW":
+            case "PrimaryEnglishOW":
+            case "PrimaryEnglishPW":
+            case "PrimaryEnglishQW":
+            case "PrimaryEnglishRW":
+            case "PrimaryEnglishSW":
+            case "PrimaryEnglishTW":
+            case "PrimaryEnglishUW":
+            case "PrimaryEnglishVW":
+            case "PrimaryEnglishWW":
+            case "PrimaryEnglishXW":
+            case "PrimaryEnglishYW":
+            case "PrimaryEnglishZW":
+            case "PrimaryUrduALifMadAaW":
+            case "PrimaryUrduALifW":
+            case "PrimaryUrduArrayW":
+            case "PrimaryUrduBayW":
+            case "PrimaryUrduChayW":
+            case "PrimaryUrduDaalW":
+            case "PrimaryUrduDhaaW":
+            case "PrimaryUrduHayW":
+            case "PrimaryUrduJeemW":
+            case "PrimaryUrduKhayW":
+            case "PrimaryUrduPayW":
+            case "PrimaryUrduRaayW":
+            case "PrimaryUrduSayW":
+            case "PrimaryUrduTayW":
+            case "PrimaryUrduThayW":
+            case "PrimaryUrduZaalW":
+            case "PrimaryUrduZayW":
+            case "PrimaryUrduZhayW":
+            case "PrimaryUrduSeenW":
+            case "PrimaryUrduSheenW":
+            case "PrimaryUrduSuaadW":
+            case "PrimaryUrduZuaadW":
+            case "PrimaryUrduTuoyW":
+            case "PrimaryUrduZuoyW":
+            case "PrimaryUrduAeinW":
+            case "PrimaryUrduGhaeinW":
+            case "PrimaryUrduFayW":
+            case "PrimaryUrduQaafW":
+            case "PrimaryUrduKaafW":
+            case "PrimaryUrduGaafW":
+            case "PrimaryUrduLaamW":
+            case "PrimaryUrduMeemW":
+            case "PrimaryUrduNoonW":
+            case "PrimaryUrduWowW":
+            case "PrimaryUrdu2ChashmiHaiW":
+            case "PrimaryUrduGolHaiW":
+            case "PrimaryUrduHamzaW":
+            case "PrimaryUrduChotiYayW":
+            case "PrimaryUrduBarriYayW":
+            case "PrimaryMath1W":
+            case "PrimaryMath2W":
+            case "PrimaryMath3W":
+            case "PrimaryMath4W":
+            case "PrimaryMath5W":
+            case "PrimaryMath6W":
+            case "PrimaryMath7W":
+            case "PrimaryMath8W":
+            case "PrimaryMath9W":
+                return "Writing";
+
+            case "PrimaryEnglishAI":
+            case "PrimaryEnglishBI":
+            case "PrimaryEnglishCI":
+            case "PrimaryEnglishDI":
+            case "PrimaryEnglishEI":
+            case "PrimaryEnglishFI":
+            case "PrimaryEnglishGI":
+            case "PrimaryEnglishHI":
+            case "PrimaryEnglishII":
+            case "PrimaryEnglishJI":
+            case "PrimaryEnglishKI":
+            case "PrimaryEnglishLI":
+            case "PrimaryEnglishMI":
+            case "PrimaryEnglishNI":
+            case "PrimaryEnglishOI":
+            case "PrimaryEnglishPI":
+            case "PrimaryEnglishQI":
+            case "PrimaryEnglishRI":
+            case "PrimaryEnglishSI":
+            case "PrimaryEnglishTI":
+            case "PrimaryEnglishUI":
+            case "PrimaryEnglishVI":
+            case "PrimaryEnglishWI":
+            case "PrimaryEnglishXI":
+            case "PrimaryEnglishYI":
+            case "PrimaryEnglishZI":
+            case "PrimaryUrduImlaAsaan":
+            case "PrimaryUrduImlaMushkil":
+            case "PrimaryUrduImlaTezTalwaar":
+            case "PrimaryUrduALifMadAaI":
+            case "PrimaryUrduALifI":
+            case "PrimaryUrduArrayI":
+            case "PrimaryUrduBayI":
+            case "PrimaryUrduChayI":
+            case "PrimaryUrduDaalI":
+            case "PrimaryUrduDhaalI":
+            case "PrimaryUrduHayI":
+            case "PrimaryUrduJeemI":
+            case "PrimaryUrduKhayI":
+            case "PrimaryUrduPayI":
+            case "PrimaryUrduRaayI":
+            case "PrimaryUrduSayI":
+            case "PrimaryUrduTayI":
+            case "PrimaryUrduThayI":
+            case "PrimaryUrduZaalI":
+            case "PrimaryUrduZayI":
+            case "PrimaryUrduZhayI":
+            case "PrimaryUrduSeenI":
+            case "PrimaryUrduSheenI":
+            case "PrimaryUrduSuaadI":
+            case "PrimaryUrduZuaadI":
+            case "PrimaryUrduTuoyI":
+            case "PrimaryUrduZuoyI":
+            case "PrimaryUrduAeinI":
+            case "PrimaryUrduGhaeinI":
+            case "PrimaryUrduFayI":
+            case "PrimaryUrduQaafI":
+            case "PrimaryUrduKaafI":
+            case "PrimaryUrduGaafI":
+            case "PrimaryUrduLaamI":
+            case "PrimaryUrduMeemI":
+            case "PrimaryUrduNoonI":
+            case "PrimaryUrduWowI":
+            case "PrimaryUrduHayyI":
+            case "PrimaryUrduHamzaI":
+            case "PrimaryUrduYaayI":
+            case "PrimaryMath1I":
+            case "PrimaryMath2I":
+            case "PrimaryMath3I":
+            case "PrimaryMath4I":
+            case "PrimaryMath5I":
+            case "PrimaryMath6I":
+            case "PrimaryMath7I":
+            case "PrimaryMath8I":
+            case "PrimaryMath9I":
+                return "Identification";
+
+            case "PrimaryEnglishAV":
+            case "PrimaryEnglishBV":
+            case "PrimaryEnglishCV":
+            case "PrimaryEnglishDV":
+            case "PrimaryEnglishEV":
+            case "PrimaryEnglishFV":
+            case "PrimaryEnglishGV":
+            case "PrimaryEnglishHV":
+            case "PrimaryEnglishIV":
+            case "PrimaryEnglishJV":
+            case "PrimaryEnglishKV":
+            case "PrimaryEnglishLV":
+            case "PrimaryEnglishMV":
+            case "PrimaryEnglishNV":
+            case "PrimaryEnglishOV":
+            case "PrimaryEnglishPV":
+            case "PrimaryEnglishQV":
+            case "PrimaryEnglishRV":
+            case "PrimaryEnglishSV":
+            case "PrimaryEnglishTV":
+            case "PrimaryEnglishUV":
+            case "PrimaryEnglishVV":
+            case "PrimaryEnglishWV":
+            case "PrimaryEnglishXV":
+            case "PrimaryEnglishYV":
+            case "PrimaryEnglishZV":
+            case "PrimaryUrduALifMadAaV":
+            case "PrimaryUrduALifV":
+            case "PrimaryUrduArrayV":
+            case "PrimaryUrduBayV":
+            case "PrimaryUrduChayV":
+            case "PrimaryUrduDaalV":
+            case "PrimaryUrduDhaalV":
+            case "PrimaryUrduHayV":
+            case "PrimaryUrduJeemV":
+            case "PrimaryUrduKhayV":
+            case "PrimaryUrduPayV":
+            case "PrimaryUrduRaayV":
+            case "PrimaryUrduSayV":
+            case "PrimaryUrduTayV":
+            case "PrimaryUrduThayV":
+            case "PrimaryUrduZaalV":
+            case "PrimaryUrduZayV":
+            case "PrimaryUrduZhayV":
+            case "PrimaryUrduSeenV":
+            case "PrimaryUrduSheenV":
+            case "PrimaryUrduSuaadV":
+            case "PrimaryUrduZuaadV":
+            case "PrimaryUrduTuoyV":
+            case "PrimaryUrduZuoyV":
+            case "PrimaryUrduAeinV":
+            case "PrimaryUrduGhaeinV":
+            case "PrimaryUrduFayV":
+            case "PrimaryUrduQaafV":
+            case "PrimaryUrduKaafV":
+            case "PrimaryUrduGaafV":
+            case "PrimaryUrduLaamV":
+            case "PrimaryUrduMeemV":
+            case "PrimaryUrduNoonV":
+            case "PrimaryUrduWowV":
+            case "PrimaryUrduHayyV":
+            case "PrimaryUrduHamzaV":
+            case "PrimaryUrduYaayV":
+            case "PrimaryMath1V":
+            case "PrimaryMath2V":
+            case "PrimaryMath3V":
+            case "PrimaryMath4V":
+            case "PrimaryMath5V":
+            case "PrimaryMath6V":
+            case "PrimaryMath7V":
+            case "PrimaryMath8V":
+            case "PrimaryMath9V":
+                return "Vocabulary";
+        }
+        return "";
+    }
+
+}
+

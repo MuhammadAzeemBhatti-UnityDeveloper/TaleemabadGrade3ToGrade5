@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>daily_trial_enabled</key>
+        <value>yes</value> // 1(default) gives daily trial
+    </entry>
+</defaultsMap>
+    <!-- END xml_defaults -->

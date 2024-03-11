@@ -1,0 +1,22 @@
+{
+    "Version": "1.0",
+    "CredentialsProvider": {
+        "CognitoIdentity": {
+            "Default": {
+                "PoolId": "us-east-1:e27f4566-7490-4be6-8ee7-3a8916d61b72",
+                "Region": "us-east-1"
+            }
+        }
+    },
+    "IdentityManager" : {
+      "Default" : {
+
+      }
+    },
+    "S3TransferUtility": {
+        "Default": {
+            "Bucket": "video-repository-taleemabad-ireland",
+            "Region": "eu-west-1"
+        }
+    }
+}

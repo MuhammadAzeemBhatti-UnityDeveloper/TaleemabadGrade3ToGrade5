@@ -1,0 +1,1561 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@mipmap/bg_purple"
+    >
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCarryLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".037" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCarryRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCarryBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".25" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineCarryTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".10" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".60" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".20" />
+
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/guidelineBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/showText"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:text=""
+            android:visibility="invisible"
+            android:maxLength="2"
+            android:textColor="@color/white"
+            android:typeface="normal"
+            app:autoSizeMaxTextSize="25dp"
+            app:autoSizeMinTextSize="9dp"
+            app:autoSizeTextType="uniform" />
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineOuterBoxLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".037" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineOuterBoxRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".505" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineOuterBoxTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".264" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineOuterBoxBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".875" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mathsSubtractionOuterBoxLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/maths_addition_outerbox_frame"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/guidelineOuterBoxBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineOuterBoxRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineOuterBoxLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineOuterBoxTop"
+
+        >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRowLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".01" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRowRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".989" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRow1Top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".015" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRow1Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".245" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineImage1Top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".245" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineImage1Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".255" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRow2Top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".255" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRow2Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".4995" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineImage2Top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".4995" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineImage2Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".503" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRow3Top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".503" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRow3Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".745" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineImage3Top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".745" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineImage3Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".755" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRow4Top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".755" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineRow4Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".985" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/guidelineRow1Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRowRight"
+            app:layout_constraintStart_toEndOf="@id/guidelineRowLeft"
+            app:layout_constraintTop_toTopOf="@+id/guidelineRow1Top">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewHTH"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewTH"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="TH"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewH"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="H"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewT"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="T"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewU"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/maths_right_top_background"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="U"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FFFF"
+            app:layout_constraintBottom_toTopOf="@id/guidelineImage1Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRowRight"
+            app:layout_constraintStart_toEndOf="@id/guidelineRowLeft"
+            app:layout_constraintTop_toTopOf="@+id/guidelineImage1Top" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/guidelineRow2Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRowRight"
+            app:layout_constraintStart_toEndOf="@id/guidelineRowLeft"
+            app:layout_constraintTop_toTopOf="@+id/guidelineRow2Top">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewHTH1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewTH1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewH1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewT1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewU1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/maths_mid_background"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:background="#FFFF"
+            app:layout_constraintBottom_toTopOf="@id/guidelineImage2Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRowRight"
+            app:layout_constraintStart_toEndOf="@id/guidelineRowLeft"
+            app:layout_constraintTop_toTopOf="@+id/guidelineImage2Top" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/guidelineRow3Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRowRight"
+            app:layout_constraintStart_toEndOf="@id/guidelineRowLeft"
+            app:layout_constraintTop_toTopOf="@+id/guidelineRow3Top">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewOperator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="-"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewTH2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewH2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewT2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="90dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewU2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/maths_mid_background"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="9dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#FFFF"
+            app:layout_constraintBottom_toTopOf="@id/guidelineImage3Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRowRight"
+            app:layout_constraintStart_toEndOf="@id/guidelineRowLeft"
+            app:layout_constraintTop_toTopOf="@+id/guidelineImage3Top" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/guidelineRow4Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineRowRight"
+            app:layout_constraintStart_toEndOf="@id/guidelineRowLeft"
+            app:layout_constraintTop_toTopOf="@+id/guidelineRow4Top">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewHTH3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text=""
+                    android:maxLength="2"
+                    android:background="@drawable/maths_addition_answer_leftbottom"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="5dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewTH3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text=""
+                    android:maxLength="2"
+                    android:background="@drawable/maths_addition_answer_mid"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="5dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                >
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewH3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text=""
+                    android:maxLength="2"
+                    android:background="@drawable/maths_addition_answer_mid"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="5dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewT3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text=""
+                    android:maxLength="2"
+                    android:background="@drawable/maths_addition_answer_mid"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="5dp"
+                    app:autoSizeTextType="uniform" />
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#FFFF" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsSubtractionTextViewU3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:background="@drawable/maths_addition_answer_rightbottom"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    android:maxLength="2"
+                    app:autoSizeMaxTextSize="70dp"
+                    app:autoSizeMinTextSize="5dp"
+                    app:autoSizeTextType="uniform" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePopUpLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".10" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePopUpRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePopUpTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".24" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePopUpBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".90" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/explanationPopUpLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="gone"
+            android:background="@drawable/maths_popup"
+            app:layout_constraintTop_toTopOf="@+id/guidelinePopUpTop"
+            app:layout_constraintBottom_toTopOf="@id/guidelinePopUpBottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelinePopUpRight"
+            app:layout_constraintStart_toEndOf="@id/guidelinePopUpLeft"
+            >
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTextViewInPopUpLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".07" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTextViewInPopUpRight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".93" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTextViewInPopUpTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent=".12" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTextViewInPopUpBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="0dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/explanationTextViewInPopUp"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:typeface="normal"
+                app:autoSizeMaxTextSize="70dp"
+                app:autoSizeMinTextSize="9dp"
+                android:fontFamily="@font/montesrrat_boldfont"
+                app:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:soundEffectsEnabled="false"
+                app:layout_constraintTop_toTopOf="@+id/guidelineTextViewInPopUpTop"
+                app:layout_constraintBottom_toTopOf="@id/guidelineTextViewInPopUpBottom"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineTextViewInPopUpRight"
+                app:layout_constraintStart_toEndOf="@id/guidelineTextViewInPopUpLeft"
+                />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePopUpCloseLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".828" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePopUpCloseRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".901" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePopUpCloseTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".20" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelinePopUpCloseBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".335" />
+
+        <ImageView
+            android:id="@+id/explanationTextViewPopUpClose"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:visibility="gone"
+            android:src="@mipmap/cross"
+            android:soundEffectsEnabled="false"
+            app:layout_constraintTop_toTopOf="@+id/guidelinePopUpCloseTop"
+            app:layout_constraintBottom_toTopOf="@id/guidelinePopUpCloseBottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelinePopUpCloseRight"
+            app:layout_constraintStart_toEndOf="@id/guidelinePopUpCloseLeft"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/guidelineCarryBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineCarryRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineCarryLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineCarryTop">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mathsSubtractionTextViewHTH11"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:typeface="normal"
+                app:autoSizeMaxTextSize="70dp"
+                app:autoSizeMinTextSize="9dp"
+                app:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mathsSubtractionCarryTextViewTH"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:text="1"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:typeface="normal"
+                app:autoSizeMaxTextSize="70dp"
+                app:autoSizeMinTextSize="9dp"
+                app:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mathsSubtractionCarryTextViewH"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:text="1"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:typeface="normal"
+                app:autoSizeMaxTextSize="70dp"
+                app:autoSizeMinTextSize="9dp"
+                app:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mathsSubtractionCarryTextViewT"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:text="1"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:typeface="normal"
+                app:autoSizeMaxTextSize="70dp"
+                app:autoSizeMinTextSize="9dp"
+                app:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/mathsSubtractionCarryTextViewU"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:typeface="normal"
+                android:visibility="gone"
+                app:autoSizeMaxTextSize="70dp"
+                app:autoSizeMinTextSize="9dp"
+                app:autoSizeTextType="uniform" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+    <!--    BUTTONS-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton1Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".589" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton1Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".675" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton2Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".706" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton2Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".792" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton3Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".825" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton3Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".911" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton1Top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".253" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton1Bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".384" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton4Top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".446" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton4Bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".557" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton7Top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".64" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton7Bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".72 " />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonDelTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".78"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButtonDelBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".93" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsSubtractionTextView1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:background="@mipmap/maths_addition_number1"
+        android:paddingBottom="6dp"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton1Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton1Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton1Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton1Top" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsSubtractionTextView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:background="@mipmap/maths_addition_number2"
+        android:paddingBottom="6dp"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton1Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton2Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton2Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton1Top" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsSubtractionTextView3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:background="@mipmap/maths_addition_number3"
+        android:paddingBottom="6dp"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton1Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton3Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton3Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton1Top" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsSubtractionTextView4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:background="@mipmap/maths_addition_number4"
+        android:paddingBottom="6dp"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton4Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton1Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton1Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton4Top" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsSubtractionTextView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:background="@mipmap/maths_addition_number5"
+        android:paddingBottom="6dp"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton4Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton2Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton2Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton4Top" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsSubtractionTextView6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:background="@mipmap/maths_addition_number6"
+        android:paddingBottom="6dp"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton4Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton3Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton3Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton4Top" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsSubtractionTextView7"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:background="@mipmap/maths_addition_number7"
+        android:paddingBottom="6dp"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton7Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton1Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton1Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton7Top" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsSubtractionTextView8"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:background="@mipmap/maths_addition_number8"
+        android:paddingBottom="6dp"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton7Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton2Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton2Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton7Top" />
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsSubtractionTextView9"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:background="@mipmap/maths_addition_number9"
+        android:paddingBottom="6dp"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton7Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton3Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton3Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton7Top" />
+
+    <ImageView
+        android:id="@+id/mathsSubtractionImageViewDel"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:src="@mipmap/back"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButtonDelBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton1Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton1Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButtonDelTop" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsSubtractionTextView0"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/montserrat_semibold"
+        android:gravity="center"
+        android:background="@mipmap/maths_addition_number0"
+        android:paddingBottom="6dp"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButtonDelBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton2Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton2Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButtonDelTop" />
+
+
+
+    <ImageView
+        android:id="@+id/mathsSubtractionImageViewTick"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:src="@mipmap/tick"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButtonDelBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton3Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton3Left"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButtonDelTop" />
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

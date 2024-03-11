@@ -1,0 +1,1084 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/mainConstraintLayout">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineQuestionLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".113" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineQuestionRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".804" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineQuestionTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineQuestionBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".213" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/questionTextViewQuestion"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fontFamily="@font/kohinoor_arabic_regular"
+        android:gravity="center_horizontal|top"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        android:scrollbars = "vertical"
+        app:layout_constraintBottom_toTopOf="@id/guidelineQuestionBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineQuestionRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineQuestionLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineQuestionTop" />
+
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTableLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".037" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTableRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".47" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTableTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTableBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".92" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mathsMcqlayoutTable"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/maths_mcq_table_bg"
+        app:layout_constraintBottom_toTopOf="@id/guidelineTableBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineTableRight"
+        app:layout_constraintStart_toEndOf="@id/guidelineTableLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTableTop" >
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTableRow1Left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".04" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTableRow1Right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".96" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTableRow1Top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".0375" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTableRow1Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".2975" />
+
+        <LinearLayout
+            android:id="@+id/mathsMcqLayoutTableRow1"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:soundEffectsEnabled="false"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTableRow1Top"
+            app:layout_constraintBottom_toTopOf="@id/guidelineTableRow1Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineTableRow1Right"
+            app:layout_constraintStart_toEndOf="@id/guidelineTableRow1Left">
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout1x1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView1x1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="8"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="11dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout1x2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView1x2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="-"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout1x3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView1x3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="7dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout1x4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView1x4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="="
+                    android:paddingRight="5dp"
+                    android:paddingBottom="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout1x5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView1x5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="6"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="15dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTableRow2Top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".2675" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTableRow2Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".5275" />
+
+        <LinearLayout
+            android:id="@+id/mathsMcqLayoutTableRow2"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:soundEffectsEnabled="false"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTableRow2Top"
+            app:layout_constraintBottom_toTopOf="@id/guidelineTableRow2Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineTableRow1Right"
+            app:layout_constraintStart_toEndOf="@id/guidelineTableRow1Left">
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout2x1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView2x1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="8"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="11dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout2x2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView2x2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="-"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout2x3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView2x3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="2"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="11dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout2x4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView2x4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="="
+                    android:paddingRight="5dp"
+                    android:paddingBottom="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout2x5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView2x5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:background="@drawable/maths_mcq_blank_roundbg"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="7dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="40dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTableRow3Top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".5075" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTableRow3Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".76" />
+
+        <LinearLayout
+            android:id="@+id/mathsMcqLayoutTableRow3"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:soundEffectsEnabled="false"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTableRow3Top"
+            app:layout_constraintBottom_toTopOf="@id/guidelineTableRow3Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineTableRow1Right"
+            app:layout_constraintStart_toEndOf="@id/guidelineTableRow1Left">
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout3x1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView3x1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="7dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout3x2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView3x2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="-"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout3x3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView3x3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="2"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="11dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout3x4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView3x4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="="
+                    android:paddingRight="5dp"
+                    android:paddingBottom="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout3x5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView3x5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="6"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="11dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+
+
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTableRow4Top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".7375" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTableRow4Bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".99" />
+
+        <LinearLayout
+            android:id="@+id/mathsMcqLayoutTableRow4"
+            android:orientation="horizontal"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:soundEffectsEnabled="false"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTableRow4Top"
+            app:layout_constraintBottom_toTopOf="@id/guidelineTableRow4Bottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineTableRow1Right"
+            app:layout_constraintStart_toEndOf="@id/guidelineTableRow1Left">
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout4x1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView4x1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="2"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="11dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout4x2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView4x2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="-"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout4x3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView4x3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="7dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout4x4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView4x4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="="
+                    android:paddingRight="5dp"
+                    android:paddingBottom="6dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/mathsMcqLayout4x5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                >
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/mathsMcqTextView4x5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="6"
+                    android:paddingRight="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="11dp"
+                    android:paddingTop="5dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:typeface="normal"
+                    app:autoSizeMaxTextSize="60dp"
+                    app:autoSizeMinTextSize="9dp"
+                    android:maxLines="1"
+                    android:fontFamily="@font/montesrrat_semiboldfont"
+                    app:autoSizeTextType="uniform"
+                    android:gravity="center"
+                    android:soundEffectsEnabled="false"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton1x1Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".55" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton1x1Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".718" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton1x1Top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".271" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton1x1Bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".532" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsMcqTextViewButton1x1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="4"
+        android:paddingTop="10dp"
+        android:paddingBottom="15dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:background="@drawable/maths_bg"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        android:maxLines="1"
+        android:fontFamily="@font/montesrrat_semiboldfont"
+        app:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:soundEffectsEnabled="false"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton1x1Top"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton1x1Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton1x1Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton1x1Left"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton1x2Left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".763" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton1x2Right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".929" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsMcqTextViewButton1x2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="2"
+        android:background="@drawable/maths_bg"
+        android:paddingTop="10dp"
+        android:paddingBottom="15dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        android:maxLines="1"
+        android:fontFamily="@font/montesrrat_semiboldfont"
+        app:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:soundEffectsEnabled="false"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton1x1Top"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton1x1Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton1x2Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton1x2Left"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton2x1Top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".609" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineButton2x1Bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".869" />
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsMcqTextViewButton2x1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="4"
+        android:background="@drawable/maths_bg"
+        android:paddingTop="10dp"
+        android:paddingBottom="15dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        android:maxLines="1"
+        android:fontFamily="@font/montesrrat_semiboldfont"
+        app:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:soundEffectsEnabled="false"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton2x1Top"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton2x1Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton1x1Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton1x1Left"
+        />
+
+
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/mathsMcqTextViewButton2x2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="6"
+        android:background="@drawable/maths_bg"
+        android:paddingTop="10dp"
+        android:paddingBottom="15dp"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:typeface="normal"
+        app:autoSizeMaxTextSize="70dp"
+        app:autoSizeMinTextSize="9dp"
+        android:maxLines="1"
+        android:fontFamily="@font/montesrrat_semiboldfont"
+        app:autoSizeTextType="uniform"
+        android:gravity="center"
+        android:soundEffectsEnabled="false"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButton2x1Top"
+        app:layout_constraintBottom_toTopOf="@id/guidelineButton2x1Bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButton1x2Right"
+        app:layout_constraintStart_toEndOf="@id/guidelineButton1x2Left"
+        />
+
+
+    <!--    POPUp Layout-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePopUpLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".10" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePopUpRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePopUpTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".24" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePopUpBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".90" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/mathsMcqPopUpLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        android:background="@drawable/maths_popup"
+        app:layout_constraintTop_toTopOf="@+id/guidelinePopUpTop"
+        app:layout_constraintBottom_toTopOf="@id/guidelinePopUpBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinePopUpRight"
+        app:layout_constraintStart_toEndOf="@id/guidelinePopUpLeft"
+        >
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTextViewInPopUpLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".07" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTextViewInPopUpRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".93" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTextViewInPopUpTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".12" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineTextViewInPopUpBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".88" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/mathsMcqTextViewInPopUp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:typeface="normal"
+            app:autoSizeMaxTextSize="70dp"
+            app:autoSizeMinTextSize="9dp"
+            android:fontFamily="@font/montesrrat_boldfont"
+            app:autoSizeTextType="uniform"
+            android:gravity="center"
+            android:soundEffectsEnabled="false"
+            app:layout_constraintTop_toTopOf="@+id/guidelineTextViewInPopUpTop"
+            app:layout_constraintBottom_toTopOf="@id/guidelineTextViewInPopUpBottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineTextViewInPopUpRight"
+            app:layout_constraintStart_toEndOf="@id/guidelineTextViewInPopUpLeft"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePopUpCloseLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".828" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePopUpCloseRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".901" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePopUpCloseTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".20" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinePopUpCloseBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".335" />
+
+    <ImageView
+        android:id="@+id/mathsMcqTextViewPopUpClose"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:visibility="gone"
+        android:src="@mipmap/cross"
+        android:soundEffectsEnabled="false"
+        app:layout_constraintTop_toTopOf="@+id/guidelinePopUpCloseTop"
+        app:layout_constraintBottom_toTopOf="@id/guidelinePopUpCloseBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guidelinePopUpCloseRight"
+        app:layout_constraintStart_toEndOf="@id/guidelinePopUpCloseLeft"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

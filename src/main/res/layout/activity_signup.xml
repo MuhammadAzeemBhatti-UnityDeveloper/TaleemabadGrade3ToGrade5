@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/signup_background"
+    tools:context="com.orenda.taimo.grade3tograde5.SignupActivity">
+
+    <!--    number screen-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/number_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/signup_screen_background_number"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextNumber_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".85" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextNumber_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".515" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextNumber_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".45" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextNumber_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".58" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/edit_txt_white_background"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextNumber_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/editTextNumber_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/editTextNumber_right_guideline"
+            app:layout_constraintTop_toTopOf="@+id/editTextNumber_top_guideline">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/signUpCountryCodePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
+                app:ccp_autoDetectCountry="true"
+                app:ccp_contentColor="@android:color/holo_blue_dark"
+                app:ccp_countryPreference="pk,us"
+                app:ccp_flagBorderColor="@android:color/white"
+                app:ccp_showFlag="false"
+                app:ccp_showFullName="false"
+                app:ccp_showNameCode="false"
+                app:layout_constraintBottom_toBottomOf="@+id/editTextNumber_bottom_guideline"
+                app:layout_constraintLeft_toLeftOf="@+id/editTextNumber_left_guideline"
+                app:layout_constraintRight_toRightOf="@+id/editTextNumber_right_guideline"
+                app:layout_constraintTop_toTopOf="@+id/editTextNumber_top_guideline" />
+
+            <EditText
+                android:id="@+id/signUpEditTextNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_weight="3"
+                android:background="@android:color/transparent"
+                android:digits="1234567890"
+                android:gravity="start"
+                android:hint="3001234567"
+                android:imeOptions="flagNoFullscreen|actionDone"
+                android:inputType="phone"
+                android:soundEffectsEnabled="false"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textColorHint="@android:color/darker_gray"
+                app:autoSizeMaxTextSize="48dp"
+                app:autoSizeMinTextSize="24dp"
+                app:autoSizeTextType="uniform" />
+
+
+        </LinearLayout>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonSubmit_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".76" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonSubmit_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".59" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonSubmit_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".68" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonSubmit_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".80" />
+
+
+        <Button
+            android:id="@+id/signUpButtonSubmit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/signup_image_submit"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonSubmit_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/buttonSubmit_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/buttonSubmit_right_guideline"
+            app:layout_constraintTop_toTopOf="@+id/buttonSubmit_top_guideline" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--    otp screen-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/otp_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/signup_screen_background_verify"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextVerificationCode_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".85" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextVerificationCode_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".515" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextVerificationCode_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".45" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextVerificationCode_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".58" />
+
+
+        <EditText
+            android:id="@+id/signUpEditTextVerificationCode"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/edit_txt_white_background"
+            android:digits="1234567890"
+            android:gravity="center"
+            android:imeOptions="flagNoFullscreen|actionDone"
+            android:inputType="phone"
+            android:maxLength="6"
+            android:soundEffectsEnabled="false"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textColorHint="@android:color/darker_gray"
+            app:autoSizeMaxTextSize="48dp"
+            app:autoSizeMinTextSize="24dp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextVerificationCode_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/editTextVerificationCode_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/editTextVerificationCode_right_guideline"
+            app:layout_constraintTop_toTopOf="@+id/editTextVerificationCode_top_guideline" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonVerify_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".76" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonVerify_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".59" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonVerify_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".71" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonVerify_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".83" />
+
+
+        <Button
+            android:id="@+id/signUpButtonVerify"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/signup_image_verify"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonVerify_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/buttonVerify_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/buttonVerify_right_guideline"
+            app:layout_constraintTop_toTopOf="@+id/buttonVerify_top_guideline" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/otp_again_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".84" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/otp_again_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".70" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/otp_again_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".60" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/otp_again_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".67" />
+
+
+        <TextView
+            android:id="@+id/otpResendTextView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fontFamily="@font/montesrrat_semiboldfont"
+            android:text="send otp again"
+            android:textColor="@android:color/white"
+            app:autoSizeMaxTextSize="18sp"
+            app:autoSizeMinTextSize="8sp"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="@+id/otp_again_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/otp_again_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/otp_again_right_guideline"
+            app:layout_constraintTop_toTopOf="@+id/otp_again_top_guideline" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!--    name screen-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/name_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/main_background"
+        android:visibility="gone">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextName_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".75" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextName_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextName_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".42" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/editTextName_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".58" />
+
+
+        <EditText
+            android:id="@+id/signUpEditTextName"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:hint="Type Here"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:soundEffectsEnabled="false"
+            android:textColor="@android:color/white"
+            android:textColorHint="#1171BD"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextName_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/editTextName_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/editTextName_right_guideline"
+            app:layout_constraintTop_toTopOf="@+id/editTextName_top_guideline" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonVerify_Name_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonVerify_Name_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".6" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonVerify_Name_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".71" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/buttonVerify_Name_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".83" />
+
+
+        <Button
+            android:id="@+id/buttonSubmitName"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/signup_image_submit"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonVerify_Name_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/buttonVerify_Name_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/buttonVerify_Name_right_guideline"
+            app:layout_constraintTop_toTopOf="@+id/buttonVerify_Name_top_guideline" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/textView_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/textView_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".35" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:soundEffectsEnabled="false"
+            android:text="Enter your child's name to signup"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/editTextName_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/editTextName_right_guideline"
+            app:layout_constraintTop_toTopOf="@+id/textView_top_guideline" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--    exit layout on number screen-->
+    <!--    exit layout on number screen-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/exitFeedbackQuit"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/heading_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/heading_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/heading_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/heading_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".2" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="What's stopping you from continuing? Please select an option, we love feedback!"
+            android:textColor="#fff"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/heading_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/heading_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/heading_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/heading_top_guideline" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option1_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option1_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".85" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option1_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option1_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".4" />
+
+        <Button
+            android:id="@+id/exitFeedbackOption1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/signup_button_background"
+            android:text="Code not received"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/option1_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/option1_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/option1_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/option1_top_guideline" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option2_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".42" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option2_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".57" />
+
+
+        <Button
+            android:id="@+id/exitFeedbackOption2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/signup_button_background"
+            android:text="Didn't want to provide phone number at the signup"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/option2_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/option1_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/option1_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/option2_top_guideline" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option3_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".62" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option3_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".77" />
+
+
+        <Button
+            android:id="@+id/exitFeedbackOption3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/signup_button_background"
+            android:text="Signup process is lengthy"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/option3_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/option1_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/option1_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/option3_top_guideline" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option4_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/option4_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".95" />
+
+
+        <EditText
+            android:id="@+id/exitFeedbackEditText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_txt_background"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:text="Other Enter Here"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/option4_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/option1_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/option1_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/option4_top_guideline" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- user survery(from where they are coming)-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/downloadsurvey"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_heading_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_heading_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_heading_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".04" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_heading_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".2" />
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:text="How did you get to know about Taleemabad app?"
+            android:textColor="#fff"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/feedbackQuit_heading_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/feedbackQuit_heading_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/feedbackQuit_heading_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackQuit_heading_top_guideline" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option1_left_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option1_right_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".85" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option1_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".18" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option1_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".32" />
+
+        <Button
+            android:id="@+id/feedbackOption1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/signup_button_background"
+            android:text="Through Facebook/Google Ads"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/feedbackQuit_option1_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/feedbackQuit_option1_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/feedbackQuit_option1_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackQuit_option1_top_guideline" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option2_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".33" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option2_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".47" />
+
+
+        <Button
+            android:id="@+id/feedbackOption2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/signup_button_background"
+            android:text="Friend/Relative told me"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/feedbackQuit_option2_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/feedbackQuit_option1_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/feedbackQuit_option1_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackQuit_option2_top_guideline" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option3_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".48" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option3_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".62" />
+
+
+        <Button
+            android:id="@+id/feedbackOption3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/signup_button_background"
+            android:text="Through TV channel"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/feedbackQuit_option3_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/feedbackQuit_option1_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/feedbackQuit_option1_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackQuit_option3_top_guideline" />
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option5_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".63" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option5_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".77" />
+
+
+        <Button
+            android:id="@+id/feedbackOption5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/signup_button_background"
+            android:text="YouTube"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/feedbackQuit_option5_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/feedbackQuit_option1_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/feedbackQuit_option1_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackQuit_option5_top_guideline" />
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option4_top_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".8" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/feedbackQuit_option4_bottom_guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".95" />
+
+
+        <EditText
+            android:id="@+id/feedbackEditText"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="5dp"
+            android:background="@drawable/edit_txt_background"
+            android:gravity="center"
+            android:imeOptions="actionDone"
+            android:text="Other Enter Here"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/darker_gray"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/feedbackQuit_option4_bottom_guideline"
+            app:layout_constraintLeft_toLeftOf="@+id/feedbackQuit_option1_left_guideline"
+            app:layout_constraintRight_toRightOf="@+id/feedbackQuit_option1_right_guideline"
+            app:layout_constraintTop_toBottomOf="@+id/feedbackQuit_option4_top_guideline" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutProgressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:indeterminateTint="#ff0099cc" />
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- START xml_defaults -->
+<defaultsMap>
+    <entry>
+        <key>cod_value</key>
+        <value>0</value> // 0(default) is for full 4 textfield cod form
+    </entry>
+</defaultsMap>
+    <!-- END xml_defaults -->
